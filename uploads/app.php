@@ -14,25 +14,25 @@ $router->get("/get/{tabla}", function($tabla) {
     $instance = $class::getInstance(json_decode(file_get_contents("php://input"), true))->$method();
 });
 
-$router->post("/{tabla}/{id}", function ($tabla, $id) {
+$router->post("/get/{tabla}/{id}", function ($tabla, $id) {
     $class = "App\\" . $tabla;
     $method = "get_" . $tabla;
     $instance = $class::getInstance(json_decode(file_get_contents("php://input"), true))->$method($id);
 });
 
-$router->post("/{tabla}", function($tabla){
+$router->post("/post/{tabla}", function($tabla){
     $class = "App\\" .$tabla;
     $method = "post_" .$tabla;
     $instance = $class::getInstance(json_decode(file_get_contents("php://input"), true))->$method();
 });
 
-$router->put("/{tabla}/{id}", function($tabla, $id){
+$router->put("/put/{tabla}/{id}", function($tabla, $id){
     $class = "App\\" .$tabla;
     $method = "update_" .$tabla;
     $instance = $class::getInstance(json_decode(file_get_contents("php://input"), true))->$method($id);
 });
 
-$router->delete("/{tabla}/{id}", function($tabla, $id){
+$router->delete("/delete/{tabla}/{id}", function($tabla, $id){
     $class = "App\\" . $tabla;
     $method = "delete_".$tabla;
     $instance = $class::getInstance(json_decode(file_get_contents("php://input"), true))->$method($id);
