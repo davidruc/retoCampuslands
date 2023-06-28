@@ -1,0 +1,26 @@
+{
+    "name": "david/reto-campuslands",
+    "description": "...",
+    "license": "LTS",
+    "autoload": {
+        "psr-4": {
+            "App\\": [
+                "./srcipts/campers",
+                "./srcipts/departamento",
+                "./srcipts/pais",
+                "./srcipts/region",
+                "./srcipts/db",
+                "./srcipts/system"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "davidruc",
+            "email": "davidarueda18@gmail.com"
+        }
+    ],
+    "require": {
+        "bramus/router": "~1.6"
+    }
+}
